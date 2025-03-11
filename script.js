@@ -104,10 +104,15 @@ function reemplazarResultado(elemento) {
 
 // Caso para operadores
 function agregarOperacion(elemento) {
+    if (esResCero() && elemento === "-") { //Numero negativo en primer lugar
+        reemplazarResultado(elemento);
+    }
+    // Si ya hay un número y se está ingresando un operador
     if (!esResCero() && !esOperador(res.textContent.slice(-1))) {
         agregarAResultado(elemento);
     }
 }
+
 
 function esOperador(elemento) {
     const operadores = ["+", "-", "*", "/"];
@@ -117,10 +122,17 @@ function esOperador(elemento) {
 // Caso para el botón "="
 function agregarIgual() {
     if (!esResCero() && res.textContent.slice(-1) !== "=") {
-        agregarAResultado("=");  
         calcularResultado();   
     }
 }
+
+function agregarHistorial(res) {
+    let historial = document.getElementById("historial");
+    let nuevoElemento = document.createElement("li");
+    nuevoElemento.textContent = res;
+    historial.appendChild(nuevoElemento);
+}
+
 
 function calcularResultado() {
     let tokens = parsearString(res.textContent);
@@ -137,6 +149,7 @@ function calcularResultado() {
 
     // Asegurar que el resultado es un número válido antes de mostrarlo
     if (!isNaN(resultadoFinal) && isFinite(resultadoFinal)) {
+        agregarHistorial(res.textContent + " = " + resultadoFinal.toString()); //Agrego el resultado al historial
         res.textContent = resultadoFinal.toString();
     } else {
         res.textContent = "Error"; // Manejo de errores básicos
@@ -145,7 +158,7 @@ function calcularResultado() {
 
 //Parsear la cadena en tokens
 function parsearString(expresion) {
-    const regex = /(\d+(\.\d*)?|\.\d+|\+|\-|\*|\/)/g; // Expresión regular que reconoce y separa números (enteros y decimales) y operadores matemáticos (+, -, *, /).
+    const regex = /(\-?\d+(\.\d*)?|\.\d+|[\+\-\*\/])/g; // Expresión regular que reconoce y separa números (enteros y decimales) y operadores matemáticos (+, -, *, /).
     return expresion.match(regex) || [];
 }
 
@@ -206,6 +219,7 @@ function evaluarSumasYRestas(tokens) {
     }
     return resultado;
 }
+
 
 //Funciones para limpiar
 bBorrarTodo.addEventListener("click", reiniciarResultado);
