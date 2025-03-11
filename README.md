@@ -1,4 +1,4 @@
-# Calculadora en JavaScript - Por Ariel Vincennao
+# Calculadora en JavaScript
 
 Este es un proyecto de una **calculadora** desarrollada en **HTML, CSS y JavaScript**. Permite realizar operaciones matemáticas combinadas como **suma, resta, multiplicación y división**, manejando a su vez números decimales.
 
