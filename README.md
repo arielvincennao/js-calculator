@@ -9,5 +9,7 @@ Este es un proyecto de una **calculadora** desarrollada en **HTML, CSS y JavaScr
 - Muestra el resultado tras presionar `=`.  
 - Incluye botones para **borrar un dígito** y **resetear la calculadora**.  
 - No permite ingresar operadores consecutivos ni errores en la expresión matemática.
-
+## Agregar a futuro
+- Historial
+- Cantidad caracteres
 ## Link: -----
