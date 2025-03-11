@@ -158,8 +158,23 @@ function calcularResultado() {
 
 //Parsear la cadena en tokens
 function parsearString(expresion) {
-    const regex = /(\-?\d+(\.\d*)?|\.\d+|[\+\-\*\/])/g; // Expresión regular que reconoce y separa números (enteros y decimales) y operadores matemáticos (+, -, *, /).
-    return expresion.match(regex) || [];
+    const regex = /(\d+(\.\d*)?|\.\d+|[\+\-\*\/])/g; // Expresión regular que reconoce y separa números (enteros y decimales) y operadores matemáticos (+, -, *, /).
+    const partes = expresion.match(regex) || [];
+    
+    const resultado = [];
+    let i = 0;
+    
+    while (i < partes.length) {
+        if (partes[i] === '-' && (i === 0 || partes[i - 1] === '+' || partes[i - 1] === '-' || partes[i - 1] === '*' || partes[i - 1] === '/')) {
+            resultado.push(partes[i] + partes[i + 1]);
+            i += 2;
+        } else {
+            resultado.push(partes[i]);
+            i++;
+        }
+    }
+
+    return resultado;
 }
 
 //Evaluar multiplicaciones y divisiones primero
