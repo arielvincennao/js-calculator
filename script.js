@@ -104,6 +104,9 @@ function reemplazarResultado(elemento) {
 
 // Caso para operadores
 function agregarOperacion(elemento) {
+    if(!esResCero() && elemento === "-"  && (res.textContent.slice(-1) === "*" ||  res.textContent.slice(-1) === "/")){
+        agregarAResultado(elemento);
+    }
     if (esResCero() && elemento === "-") { //Numero negativo en primer lugar
         reemplazarResultado(elemento);
     }
