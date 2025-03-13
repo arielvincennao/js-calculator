@@ -1,48 +1,52 @@
 body {
   background: linear-gradient(to bottom, #4b0082, #6a0dad, #8a2be2);
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
   font-family: 'Courier New', monospace;
   font-size: 20px;
+  padding: 20px;
 }
 
-h1{
-  font-size: 40px;
+.calculatort{
+  font-size: 35px !important;
 }
+
+h1 {
+  font-size: 25px;
+}
+
 h2 {
   border-radius: 15px;
   background-color: white;
-  width: 640px;
+  width: 100%;
+  max-width: 640px;
   margin: 30px 0;
+  padding: 10px;
 }
 
-.hero{
-  margin-bottom: 60px;
-}
-
-li{
-  font-size: 20px;
-  font-weight: bold;
-  margin: 10px;
+.hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  justify-content: center;
   max-width: 640px;
-  /* Ancho máximo para que haya 4 botones por fila */
+  width: 100%;
+  justify-content: center;
+  margin-left: 9px;
 }
 
 .item {
-  width: 150px;
-  /* Ancho fijo de los botones */
+  width: 100%;
   height: 60px;
   background-color: #ffffff;
   display: flex;
@@ -76,30 +80,65 @@ button {
   justify-content: center;
 }
 
-
 .history {
   background: rgba(255, 255, 255, 0.9);
   padding: 15px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  max-width: 660px;
+  max-width: 500px;
   width: 100%;
-  margin-top: 20px;
-  height: 300px;
-  margin-bottom: 60px;
+  margin-top: 50px;
+  height: 300px; 
 }
 
-.history h1 {
-  font-size: 1.5rem;
-  color: #4b0082;
-  margin-bottom: 10px;
+#historial{
+  list-style-type: none;
+  padding-left: 0; 
 }
 
-#historial {
-  list-style: none;
-  padding: 0;
-  max-height: 200px;
-  overflow-y: auto;
-  border-top: 2px solid #4b0082;
-  padding-top: 10px;
+li{
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .item {
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .history {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 27px;
+  }
+
+  h2 {
+    font-size: 25px;
+    padding: 0px;
+  }
+
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-left: 20px;
+  }
+
+  .item {
+    height: 58px;
+    font-size: 1.2rem;
+  }
+
+  .history {
+    max-width: 80%;
+  }
 }
