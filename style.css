@@ -88,6 +88,8 @@ button {
   max-width: 500px;
   width: 100%;
   margin-top: 50px;
+  max-height: 300px;
+  overflow-y: auto;
   height: 300px; 
 }
 

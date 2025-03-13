@@ -4,12 +4,11 @@ Este es un proyecto de una **calculadora** desarrollada en **HTML, CSS y JavaScr
 
 ## Características
 
-- Soporta las cuatro operaciones básicas: `+`, `-`, `*`, `/`.  
-- Permite ingresar números decimales con `.`.  
-- Muestra el resultado tras presionar `=`.  
-- Incluye botones para **borrar un dígito** y **resetear la calculadora**.  
-- No permite ingresar operadores consecutivos ni errores en la expresión matemática.
-## Agregar a futuro
-- Historial
-- Cantidad caracteres
-## Link: -----
+- Soporta las cuatro operaciones básicas: `+`, `-`, `*`, `/`.
+- Permite ingresar números decimales con `.`.
+- Muestra el resultado tras presionar `=`.
+- Incluye botones para **borrar un dígito** y **resetear la calculadora**.
+- No permite ingresar operadores consecutivos (salvo "-") ni errores en la expresión matemática.
+- Posee un historial donde se pueden ver calculos anteriores.
+
+## Link: [Calculadora desplegada](https://js-calculator-dun.vercel.app/)
