@@ -11,4 +11,4 @@ Este es un proyecto de una **calculadora** desarrollada en **HTML, CSS y JavaScr
 - No permite ingresar operadores consecutivos (salvo "-") ni errores en la expresión matemática.
 - Posee un historial donde se pueden ver cálculos anteriores.
 
-## Link: (https://js-calculator-dun.vercel.app/)
+## Link: https://js-calculator-dun.vercel.app/
