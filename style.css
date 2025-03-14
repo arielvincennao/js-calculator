@@ -137,10 +137,15 @@ li{
 
   .item {
     height: 58px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .history {
     max-width: 80%;
+  }
+
+  li{
+    font-size: 25px;
+    font-weight: bold;
   }
 }
